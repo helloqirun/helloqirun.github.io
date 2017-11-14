@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>  
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+	<title>Skeletal Program Enumeration</title> 
+
+</head>
+	
+<body bgcolor="#cce8cf"><font face="arial" size="3"><object>
+	
+	<center>
+		<h1>Skeletal Program Enumeration for Rigorous Compiler Testing</h1>
+		<a href="../../index.html">Qirun
+		Zhang</a>, <a href="http://chengniansun.bitbucket.org/">Chengnian Sun</a>
+		and <a href="http://web.cs.ucdavis.edu/~su/">Zhendong Su</a> 
+	</center>
+	<hr>
+	<h2>Introduction</h2>
+		<p>Skeleton program enumeration (SPE) is
+		a novel framework for systematic, rigorous compiler
+		testing. We view a program as a syntactic structure P (syntactic
+		skeleton) parameterized by a collection of identifiers V 
+		(variable names). Given a syntactic skeleton P and a set of variables V,
+		the goal of SPE is to enumerate a set of programs P exhibiting all possible variable usage patterns within P. We can then use
+		the enumerated programs in P to stress-test compilers. </p>
+<p>The key
+		insights behind SPE are: (1) Programs with different variable
+		usage patterns exhibit diverse control- and data-dependence, and
+		help exploit different compiler optimizations; (2) most real
+		compiler bugs were revealed by small tests &#151; this "small-scope"
+		observation opens up SPE for practical compiler validation; and
+		(3) SPE is exhaustive <i>w.r.t.</i> a given syntactic skeleton and
+		variable set, offering a level of guarantee absent from all
+		existing compiler testing techniques.</p>
+	<h2>Reported Bugs</h2>
+		<p>We continue our team efforts working with the open-source community on
+		various compiler projects. The following table gives an overview
+		  of the bugs found by SPE. This list is not exhaustive as it does not include some of
+		the GCC/LLVM bugs reported by Chengnian and Zhendong (<a href="https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=SUSPENDED&bug_status=WAITING&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&cf_known_to_fail_type=allwords&cf_known_to_work_type=allwords&email1=chengniansun%40gmail.com&emailassigned_to1=1&emailreporter1=1&emailtype1=substring&list_id=192378&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED">link1</a>,
+		<a href="https://bugs.llvm.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=chengniansun%40gmail.com&emailassigned_to1=1&emailreporter1=1&emailtype1=substring&list_id=127921&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=LATER&resolution=REMIND&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED">link2<a>, <a href="https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=SUSPENDED&bug_status=WAITING&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&cf_known_to_fail_type=allwords&cf_known_to_work_type=allwords&email1=su%40cs.ucdavis.edu&emailassigned_to1=1&emailreporter1=1&emailtype1=substring&list_id=192379&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED">link3</a>,
+		<a href="https://bugs.llvm.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=su%40cs.ucdavis.edu&emailassigned_to1=1&emailreporter1=1&emailtype1=substring&list_id=127922&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=LATER&resolution=REMIND&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED">link4</a>) using SPE.</p>
+		
+<br>
+<center>
+<table border="1" >
+  <tr>
+    <th>Compiler</th>
+    <th>Bug Counts</th>
+  </tr>
+  <tr>
+    <td width="120" align="center"><a href="https://gcc.gnu.org/">GCC</a></td>
+    <td width="100"
+    align="right"><a  href="https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=SUSPENDED&bug_status=WAITING&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&cf_known_to_fail_type=allwords&cf_known_to_work_type=allwords&email1=helloqirun%40gmail.com&emailassigned_to1=1&emailreporter1=1&emailtype1=substring&list_id=192391&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED">63</a></td>
+  </tr>
+  <tr>
+    <td width="100" align="center"><a href="http://llvm.org/">LLVM</a></td>
+    <td width="100"
+    align="right"><a href="https://bugs.llvm.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=helloqirun%40gmail.com&emailassigned_to1=1&emailreporter1=1&emailtype1=substring&list_id=127933&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=LATER&resolution=REMIND&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED">62</a></td>
+  </tr>
+  <tr>
+    <td width="100" align="center"><a href="http://www.scala-lang.org/">Scala</a></td>
+    <td width="100"
+    align="right"><a href="https://github.com/scala/bug/issues?utf8=%E2%9C%93&q=is%3Aissue%20helloqirun">15</a></td>
+  </tr>
+  <tr>
+    <td width="100" align="center"><a href="http://dotty.epfl.ch/">Dotty</a></td>
+    <td width="100"
+    align="right"><a href="https://github.com/lampepfl/dotty/issues?utf8=%E2%9C%93&q=is%3Aissue%20involves%3Azhendongsu%20involves%3Ahelloqirun%20">43</a></td>
+  </tr>
+  <tr>
+    <td width="100" align="center"><a href="https://www.rust-lang.org/en-US/">Rust</a></td>
+    <td width="100"
+    align="right"><a href="https://github.com/rust-lang/rust/issues?q=author%3Azhendongsu">13</a></td>
+  </tr>
+  <tr>
+    <td width="100" align="center"><a href="https://github.com/rust-lang-nursery/rust-bindgen">Rust Bindgen</a></td>
+    <td width="100"
+    align="right"><a href="https://github.com/rust-lang-nursery/rust-bindgen/issues?utf8=%E2%9C%93&q=author%3Ahelloqirun%20">11</a></td>
+  </tr>
+  <tr>
+    <td width="100" align="center"><a href="http://compcert.inria.fr/">CompCert</a></td>
+    <td width="100"
+    align="right"><a href="https://github.com/AbsInt/CompCert/issues?utf8=%E2%9C%93&q=is%3Aissue%20involves%3Azhendongsu%20involves%3Ahelloqirun">30</a></td>
+  </tr>
+
+</table>
+</center>	
+<br>		
+		<hr noShade size=4>
+		<em>Last Updated: 2017-11</em>.		
+</object></font>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=10186794; 
+var sc_invisible=1; 
+var sc_security="0295c6b2"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/10186794/0/0295c6b2/1/"
+alt="web analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+
+
+</html>
