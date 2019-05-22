@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>  
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+	<title>Debugging Information Validation</title> 
+
+</head>
+	
+<body><font face="arial" size="3"><object>
+	
+	<center>
+		<h1>Debugging Information Validation</h1>
+		<a href="../../index.html">Qirun
+		Zhang</a>
+	</center>
+	<hr>
+	<h2>Introduction</h2>
+		<p>Almost all modern production software is compiled with
+		  optimization.
+Debugging  optimized code is a desirable  functionality. 
+For example, 
+developers usually perform post-mortem debugging on the coredumps produced by
+		  optimized code.
+Moreover, some runtime behaviors are observable only in optimized
+code. Designing reliable debugging techniques for optimized code
+has been well-studied in the past. 
+However, little is known about the correctness of the information presented when
+		  debugging optimized code. This page summarizes our initial findings.</p>
+	<h2>Reported Bugs</h2>
+		<p>The following table gives an overview
+		  of the bugs found by our technique. </p>
+		
+<br>
+<center>
+<table border="1" >
+  <tr>
+    <th>Compiler</th>
+    <th>Bug Counts</th>
+  </tr>
+  <tr>
+    <td width="120" align="center"><a href="https://gcc.gnu.org/">GCC</a></td>
+    <td width="100"
+    align="right"><a  href="https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=SUSPENDED&bug_status=WAITING&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&cf_known_to_fail_type=allwords&cf_known_to_work_type=allwords&f1=reporter&f2=reporter&j_top=OR&list_id=238120&o1=substring&o2=substring&product=gcc&query_format=advanced&v1=dccitaliano%40gmail.com&v2=qrzhang%40gatech.edu">17</a></td>
+  </tr>
+  <tr>
+    <td width="100" align="center"><a href="http://llvm.org/">LLVM</a></td>
+    <td width="100"
+    align="right"><a href="https://bugs.llvm.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=CONFIRMED&bug_status=REOPENED&bug_status=RESOLVED&chfield=%5BBug%20creation%5D&chfieldfrom=2018-11-03&chfieldto=Now&f1=reporter&f2=reporter&j_top=OR&list_id=162452&o1=substring&o2=substring&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=LATER&resolution=REMIND&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED&v1=davide%40freebsd.org&v2=yuanboli233%40gmail.com">27</a></td>
+  </tr>
+  <tr>
+    <td width="100" align="center"><a href="https://www.rust-lang.org/en-US/">Rust</a></td>
+    <td width="100"
+    align="right"><a href="https://github.com/rust-lang/rust/issues?q=author%3Ayuanboli233">2</a></td>
+  </tr>
+
+</table>
+</center>	
+<br>		
+		<hr noShade size=4>
+		<em>Last Updated: 2019-05</em>.		
+</object></font>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=10186794; 
+var sc_invisible=1; 
+var sc_security="0295c6b2"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/10186794/0/0295c6b2/1/"
+alt="web analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+
+
+</html>
