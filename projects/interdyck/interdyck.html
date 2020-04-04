@@ -13,11 +13,55 @@
 	
 	<center>
 		<h1>Fast Graph Simplification for Interleaved Dyck-Reachability
-		(under construction)</h1>
-		<!-- Yuanbo Li, Shuo Ding, Qirun -->
-		<!-- Zhang, Davide Italiano -->
+		</h1>
+                Yuanbo Li,  Qirun
+                Zhang, Thomas Reps
 	</center>
 	<hr>
+	<h2>Introduction</h2>
+		<p>Many program-analysis problems can be formulated as
+		graph-reachability problems.
+Interleaved Dyck language reachability (InterDyck-reachability)
+  is a fundamental framework to express a wide variety
+of program-analysis problems over edge-labeled graphs.
+The InterDyck language represents an
+intersection of multiple matched-parenthesis
+languages (<i>i.e.</i>, Dyck languages).
+In practice, program analyses typically leverage one Dyck language to achieve 
+context-sensitivity, and other Dyck languages to model data dependences, such as
+field-sensitivity and pointer references/dereferences.
+In the ideal case, an InterDyck-reachability framework should model multiple
+Dyck languages simultaneously.
+		<p>Unfortunately, precise InterDyck-reachability is
+		undecidable. 
+Any practical solution must over-approximate
+the exact answer. 
+In the literature, a lot of work has been proposed to over-approximate the
+InterDyck-reachability formulation.
+We present a new perspective on improving both the precision and the
+scalability of InterDyck-reachability:
+we aim to simplify the underlying input graph G.
+Our key insight is based on the observation that if an edge is not contributing
+		to any
+\InterDyck-path, we can safely eliminate it from G. 
+Our technique is orthogonal to the InterDyck-reachability formulation, and can
+serve  as a pre-processing
+step with any over-approximating approaches for InterDyck-reachability.</p>
+	<h2>Implementation</h2>
+<ul>
+  <li><a href="https://github.com/yuanboli233/interdyck_graph_reduce">Code
+		on Github.</a></li>
+</ul>
+		<h2>References</h2>
+<ul>
+  <li>Yuanbo Li, Qirun Zhang, Thomas Reps:
+Fast Graph Simplification for Interleaved Dyck-Reachability. In <i>PLDI
+      2020</i>: to appear</li>
+  <li>Thomas  Reps:
+Undecidability of context-sensitive data-independence analysis. In <i>TOPLAS</i> 22(1): 162-186 (2000)</li>
+
+</ul>
+
 <br>		
 		<hr noShade size=4>
 		<em>Last Updated: 2020-03</em>.		
