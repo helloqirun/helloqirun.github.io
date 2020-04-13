@@ -257,13 +257,18 @@ Qirun Zhang, Wujie Zheng and Michael R. Lyu<br>
 	window.location="https://validator.w3.org/check?uri=" +a ;
 	}
       </script>
-	<em>Last Updated: 2020-3</em>. &nbsp;&nbsp;<a onClick="myFunction();
-	return false;" href="#"><img src="http://www.w3.org/Icons/valid-html401"
-        alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
-
-
-
-</object></font>
+      <script type="text/javascript">
+	
+	var update = new Date(document.lastModified)
+	theMonth = update.getMonth() + 1
+	theYear = update.getFullYear()
+	document.writeln("<I>Last updated: " + theYear + "-" + theMonth +
+	"</I>. &nbsp;&nbsp;")
+      </script>
+      <a onClick="myFunction();
+		  return false;" href="#"><img src="http://www.w3.org/Icons/valid-html401"
+					       alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
+  </object></font>
 
 <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
