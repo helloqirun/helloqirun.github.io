@@ -1,0 +1,867 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>  
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	
+	<title>CS 8803 Topics in Program Analysis, Fall 2019</title> 
+</head>
+	
+<body><font face="arial" size="3"><object>
+
+<table border=0> 
+<tr valign=top> 
+<!-- <td>  -->
+<!-- <img src="book.jpg" border="1" height="103.4" width="92.4">  -->
+<!-- </td>  -->
+<td align = left> 
+     <h2> CS 8803</font>  <br> 
+     Topics in Program Analysis<br> 
+     <i>Fall 2019</i></font></h2>  
+</td> 
+</table> 
+
+	<hr noShade size=4>
+
+
+<DT> <b> Announcements: </b>  
+     <ul> 
+     <li> [11/23] Final presentation <a href="schedule-f.html">schedule</a>.
+     <li> [11/5] The project report is due on 11/22 10pm
+     ET. Please use the title "[8803 project] YourGroupMemberNames:Project Title".
+       <li> [9/2] The project proposal is due on 9/25 10pm
+     ET. Please use the title "[8803 project] YourGroupMemberNames:Project Title".
+     <li> [9/2] Please send your group member names to the instructor by 9/18 10:00 pm EST.
+     <li> [8/20] The first paper review on WebAssembly is due on 8/26 10pm
+     ET. Please use the title "[8803 reading] Yourname:Bringing the Web up to
+     Speed with WebAssembly".
+     <li> [8/20] Send your preference of 5 papers to present to the instructor by 8/23 10pm ET.
+     <li> [8/20] Welcome to CS8803 PAN!
+     </ul>
+
+<p>
+
+
+
+
+	<hr noShade size=4>
+<DL>
+<p> 
+<DT> <b>Instructor</b>:
+   <DD><a href="http://helloqirun.github.io/">Qirun Zhang</a>, <br> 
+       Office: 2324 Klaus<br> 
+       Office Hours: Tue/Thu 3:30 - 4:15 PM<br> 
+       Email: qrzhang@gatech.edu
+<p> 
+
+<DT> <b>Lectures</b>: 
+    <DD> Time: Tue/Thu 4:30 - 5:45 PM <br> 
+      Location: Architecture (West) 260
+
+<p>
+
+<!-- <DT> <b> Office Hours: </b>   -->
+<!--      <ul> -->
+<!--      <li> Mon.: 2:00pm-4:00pm (55 Kemper, Thong) -->
+<!--      <li> Wed.: 2:00pm-4:00pm (<strike>1031 Academic Surge Building</strike> -->
+<!--      3027 Kemper Hall, Qirun) -->
+<!--      </ul> -->
+
+<p>
+
+<DT><b>Course Summary</b>:
+  <DD>CS 8803 is a graduate course on static program analysis. 
+Static analysis provides a way to reason about programs without actually running them on specific inputs. In general, static analysis model program behavior for all possible inputs. 
+
+
+	  
+<p>
+  <DT> <b> References</b>:
+    <ul><li>Static Analysis
+   <ul>
+   <li> <i><b>Principles of Program Analysis</b></i> 
+     by F. Nielson, H. Nielson, and C. Hankin, 
+    Springer, 1999.
+   <li> <i><b>Formal Semantics of Programming Languages</b></i> 
+     by G. Winskel, 
+    MIT Press, 1993.
+   <li>[MS18] <i><b>Static Program Analysis</b></i> 
+     by A. M&oslash;ller and M. Schwartzbach, 
+     <a href="https://cs.au.dk/~amoeller/spa/">Online book</a>, 2018.
+   <li> Updated lecture notes will be posted on 
+        this site. 
+   </ul><p>
+      <li> Writing and Presentation
+	   <ul> 
+   <li>  
+     <a href="https://www.cs.columbia.edu/~hgs/etc/writing.html">Tips and Resources for Writing Computer Science Papers</a>.
+   <li><a href="https://www.cs.columbia.edu/~hgs/etc/talk-hints.html">Hints for Giving Technical Talks</a>.
+   </ul>
+
+
+   
+   </ul>
+
+<p>
+
+<!-- <p> -->
+<DT><b>Assignments</b>:
+    <ul><li><b><i>Paper Review</i></b>
+   <ul>
+   <li> Paper review LaTeX <a href="review.tex">template</a>. 
+   <li> Deadline: by 10:00 pm EST the night before the class.
+   </ul><p>
+      <li><b><i>Project Proposal</i></b>
+	   <ul>
+   <li> Four-Paragraph  <a href="https://www.cs.columbia.edu/~hgs/etc/intro-style.html">guideline</a> for your proposal.
+   <li> Deadline: 9/25 by 10:00 pm EST.
+     </ul>
+<p>
+      <li><b><i>Project Report</i></b>
+	   <ul>
+   <li> Conference-paper-style report.
+   <li> Deadline: 11/22 by 10:00 pm EST.
+     </ul>
+
+   
+   </ul>
+
+<p>
+<DT><b>Grading</b>: 
+<DD> Grading breakdown:
+<ul> 
+<li> Paper Review: 20%
+<li> Presentation: 20%
+<li> Project: 60%
+</ul> 
+<!-- <DD> Grading may reflect the clarity of your presentation as well as the  -->
+<!--      correctness of your answers.  -->
+<p> 
+
+
+<DT> <b> Schedule</b>:
+<DD> <body>
+<p>
+<table border="">
+<tbody>
+<tr>
+<th>Date</th>
+<th>Topic</th>
+<th>Paper</th>
+<th>Presenter and Optional Reading</th>
+</tr>
+
+<tr>
+<td> 8/20  </td>
+<td> Introduction</td>
+<td>
+     <ul>
+     <li> <a href="lec1.pptx">Course Logistics</a>
+     </ul>
+</td>
+<td rowspan="2">
+  <ul>
+    <li>Qirun
+    <li>Reading:
+  <ul>
+     <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash
+     Course on Notation in Programming Language Theory</a>
+       (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>).
+     <li> [MS18] Chapter 1.
+       <li> [MS18] Chapter 10.
+     </ul>
+     </ul>
+</td>
+
+</tr>
+
+<tr>
+<td> 8/22  </td>
+<td> Fundamentals</td>
+<td>
+     <ul>
+     <li> <a href="lec2.pdf">Static Analysis and Soundness</a>
+     </ul>
+     </td>
+</tr>
+<tr>
+<td> 8/27  </td>
+<td>WebAssembly</td>
+<td>
+     <ul>
+     <li>[PLDI'17] <a href="#">Bringing the Web up to Speed with WebAssembly</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Shweta
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+
+<tr>
+<td> 8/29  </td>
+<td> Superoptimization </td>
+<td>
+     <ul>
+     <li>[ASPLOS'13] <a href="#">Stochastic superoptimization</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Myeongsoo
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/3  </td>
+<td> Superoptimization </td>
+<td>
+     <ul>
+     <li>[PLDI'14] <a href="#">Stochastic optimization of floating-point programs with
+     tunable precision</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Myeongsoo
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/5  </td>
+<td> Rust </td>
+<td>
+     <ul>
+     <li> <a href="https://homepages.inf.ed.ac.uk/wadler/papers/linear/linear.ps">Linear types can change the world</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Youngsuk
+          <li>Reading:
+  <ul>
+     <li> <a href="https://homepages.inf.ed.ac.uk/wadler/papers/lineartaste/lineartaste-revised.pdf">A taste of linear logic</a>
+     </ul>
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/10  </td>
+<td> Rust </td>
+<td>
+     <ul>
+     <li>[POPL'18] <a href="#">RustBelt: Securing the Foundations of the Rust
+     Programming Language</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Yuanbo
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/12  </td>
+<td> Persistent Memory </td>
+<td>
+     <ul>
+     <li>[OOPSLA'18]  <a href="#">Persistence Semantics for Weak Memory</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Yuanbo
+          <li>Reading:
+  <ul>
+     <li> <a href="https://www.cs.utexas.edu/~bornholt/post/memory-models.html">Memory Consistency Models: A Tutorial</a>
+     </ul>
+      <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/17  </td>
+<td> Persistent Memory </td>
+<td>
+     <ul>
+     <li>[ASPLOS'19] <a href="#">PMTest: A Fast and Flexible Testing Framework for
+     Persistent Memory Programs</a>
+     </ul>
+    
+     </td>
+<td >
+  <ul>
+    <li> Seulbae
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+
+<tr>
+<!-- 9/24 -->
+<td> 9/19  </td> 
+<td> AutoTuning </td>
+<td>
+     <ul>
+     <li>[TACO'13] <a href="#">Continuous Learning of Compiler Heuristics</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Jacob
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<!-- 9/26 -->
+<td> 9/24  </td>
+<td> Program Generation </td>
+<td>
+     <ul>
+     <li>[ESOP'15] <a href="#">Making Random Judgments: Automatically Generating
+     Well-Typed Terms from the Definition of a Type-System</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Shuo
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 9/19 -->
+<tr>
+<td> 9/26  </td>
+<td> Project Proposal </td>
+<td>
+  <ul>
+    Presentation <a href="schedule.html">schedule</a>.
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> All
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+
+<tr>
+<td> 10/1  </td>
+<td> QuickCheck </td>
+<td>
+     <ul>
+     <li>[ICFP'00] <a href="#">QuickCheck: A Lightweight Tool for Random Testing of
+     Haskell Programs</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Shuo
+                <li>Reading:
+  <ul>
+     <li> <a href="https://www.schoolofhaskell.com/user/pbv/an-introduction-to-quickcheck-testing">An introduction to QuickCheck testing</a>
+     </ul>
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 10/3  </td>
+<td> QuickCheck </td>
+<td>
+     <ul>
+     <li>[ICFP'13] <a href="#">Testing Noninterference, Quickly</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Fan
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 10/8  </td>
+<td> Separation logic </td>
+<td>
+     <ul>
+     <li>[LICS'02] <a href="#">Separation Logic: A Logic for Shared Mutable Data Structures</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Yechan
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 10/17 -->
+<tr>
+<td> 10/10  </td>
+<td> Program Checking </td>
+<td>
+     <ul>
+     <li>[JACM'97] <a href="#">Software reliability via run-time result-checking</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Fang
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<!-- <td> 10/10  </td> -->
+<!-- <td> Separation Logic </td> -->
+<!-- <td> -->
+<!--      <ul> -->
+<!--      <li>[POPL'09] <a href="#">Compositional shape analysis by means of bi-abduction</a> -->
+<!--      </ul> -->
+<!--      </td> -->
+<!-- </tr> -->
+
+
+<tr>
+<td> 10/15  </td>
+<td> No Class - Fall Recess  </td>
+<td>
+     <ul>
+     </ul>
+     </td>
+</tr>
+
+<!-- 10/22 -->
+<tr>
+<td> 10/17  </td>
+<td> Verifiable Computing </td>
+<td>
+     <ul>
+     <li>[JAR'14] <a href="#">A Framework for the Verification of Certifying Computations</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Jacob
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 10/24 -->
+<tr>
+<td> 10/22  </td>
+<td> Resource Analysis </td>
+<td>
+     <ul>
+     <li>[PLDI'15] <a href="#">Compositional Certified Resource Bounds</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Fang
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 10/29 -->
+<tr>
+<td> 10/24  </td>
+<td> Resource Analysis </td>
+<td>
+     <ul>
+     <li>[POPL'17] <a href="#">Towards Automatic Resource Bound Analysis for Ocaml</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Gabriel
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 10/31 -->
+<tr>
+<td> 10/29  </td>
+<td> Automatic Complexity Analysis </td>
+<td>
+     <ul>
+     <li>[Report'89] <a href="https://hal.inria.fr/inria-00075410/document">The automatic complexity analysis of divide-and-conquer algorithms</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Roland
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 11/5 -->
+<tr>
+<td> 10/31  </td>
+<td> Hardware Static Analysis </td>
+<td>
+     <ul>
+     <li>[ISCA'19] <a href="#">Bouncer: Static Program Analysis in Hardware</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Yechan
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 11/7 -->
+<tr>
+<td> 11/5  </td>
+<td> Program Enumeration </td>
+<td>
+     <ul>
+     <li>[ISSTA'02] <a href="#">Korat: Automated Testing Based on Java Predicates,</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Xinyu
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 11/12 -->
+<tr>
+<td> 11/7  </td>
+<td> Peephole Optimization </td>
+<td>
+     <ul>
+     <li>[PLDI'15] <a href="#">Provably Correct Peephole Optimizations with Alive</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Gabriel
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 11/14 -->
+<tr>
+<td> 11/12  </td>
+<td> Javascript </td>
+<td>
+     <ul>
+     <li>[PLDI'14] <a href="#">Improving JavaScript performance by deconstructing the
+     type system</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Shweta
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+<!-- 11/19 -->
+<tr>
+<td> 11/14  </td>
+<td> Memory Model </td>
+<td>
+     <ul>
+     <li>[POPL'19] <a href="#">Bridging the gap between programming languages and
+     hardware weak memory models</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Youngsuk
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 11/21 -->
+<tr>
+<td> 11/19  </td>
+<td> Causal Consistency </td>
+<td>
+     <ul>
+     <li>[POPL'17] <a href="#">On Verifying Causal Consistency</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Seulbae
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 11/26 -->
+<tr>
+<td> 11/21  </td>
+<td> Differential Privacy </td>
+<td>
+     <ul>
+     <li>[CCS'12] <a href="#">On significance of the least significant bits for
+     differential privacy</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Xinyu
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+<tr>
+<td> 11/26  </td>
+<td>  
+  Final Presentation
+      </td>
+<td>     <ul>
+    Presentation <a href="schedule-f.html">schedule</a>.
+     </ul>
+ </td>
+<td >
+  <ul>
+    <li> All
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+
+<tr>
+<td> 11/28  </td>
+<td> No class - Thanksgiving break </td>
+<td>
+     <ul>
+     </ul>
+     </td>
+</tr>
+<tr>
+<td> 12/3  </td>
+<td>   Final Presentation
+ </td>
+<td>     <ul>    Presentation <a href="schedule-f.html">schedule</a>.
+     </ul>
+ </td>
+<td >
+  <ul>
+    <li> All
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+
+</tbody></table>
+<br>
+<p>
+<DT> <b> Misc</b>: 
+<DD>
+If you have any concern, please send an email to the
+instructor. This <a href="https://docs.google.com/forms/d/e/1FAIpQLSfY4zaZCTfLvMbeRn-26zcnvrTFVxMgEqMmNv8YfwoZ6HZwHQ/viewform?usp=sf_link">link</a> could
+help to send anonymous messages.
+<br>
+<br>  
+
+</object></font>
+
+
+</body>
+
+
+</html>
