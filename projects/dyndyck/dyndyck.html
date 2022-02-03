@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>  
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+	<title>Dynamic Bidirected Dyck-Reachability</title> 
+
+</head>
+	
+<body><font face="arial" size="3"><object>
+	
+	<center>
+		<h1>Efficient Algorithms for Dynamic Bidirected Dyck-Reachability
+		</h1>
+                Yuanbo Li, Kris Satya,  Qirun
+                Zhang
+	</center>
+	<hr>
+	<h2>Introduction</h2>
+<p>
+Dyck-reachability is a fundamental formulation for program analysis, which has been widely used to capture
+properly-matched-parenthesis program properties such as function calls/returns and field writes/reads. Bidirected Dyck-reachability is a relaxation of Dyck-reachability on bidirected graphs where each edge 
+labeled by an open parenthesis  is accompanied with an inverse edge labeled by the corresponding
+close parenthesis, and vice versa. In practice, many client analyses such as alias analysis adopt the bidirected Dyck-reachability formulation. Bidirected Dyck-reachability admits an optimal reachability algorithm.
+Specifically, given a graph with n nodes and m edges, the optimal bidirected Dyck-reachability algorithm
+	computes all-pairs reachability information in O(m) time. </p>
+	
+<p>This paper focuses on the dynamic version of bidirected Dyck-reachability. In particular, we consider the
+problem of maintaining all-pairs Dyck-reachability information in bidirected graphs under a sequence of
+edge insertions and deletions. Dynamic bidirected Dyck-reachability can formulate many program analysis
+problems in the presence of code changes. Unfortunately, solving dynamic graph reachability problems is
+challenging. For example, even for maintaining transitive closure, the fastest deterministic dynamic algorithm
+requires O(n<sup>2</sup>) update time to achieve O(1) query time. All-pairs Dyck-reachability is a generalization of
+transitive closure. Despite extensive research on incremental computation, there is no algorithmic development
+	on dynamic graph algorithms for program analysis with worst-case guarantees.</p>
+	
+<p>Our work fills the gap and proposes the first dynamic algorithm for Dyck reachability on bidirected graphs.
+Our dynamic algorithms can handle each graph update (i.e., edge insertion and deletion) in O(n&#945;(n)) time
+and support any all-pairs reachability query in O(1) time, where &#945;(n) is the inverse Ackermann function. We
+have implemented and evaluated our dynamic algorithm on an alias analysis and a
+	context-sensitive datadependence analysis for Java. We compare our
+	dynamic algorithms against a straightforward approach based 
+on the O(m)-time optimal bidirected Dyck-reachability algorithm and a recent incremental Datalog solver.
+Experimental results show that our algorithm achieves orders of magnitude speedup over both approaches.</p>
+	<h2>Implementation</h2>
+<ul>
+  <li><a href="https://github.com/yuanboli233/dynamic_bidirected_dyck">Code
+		on Github.</a></li>
+</ul>
+		<h2>References</h2>
+<ul>
+  <li>Yuanbo Li, Kris Satya, Qirun Zhang:
+Efficient Algorithms for Dynamic Bidirected Dyck-Reachability. In <i>POPL
+      2022</i></li>
+
+</ul>
+
+<br>		
+		<hr noShade size=4>
+		<em>Last Updated: 2022-01</em>.		
+</object></font>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=10186794; 
+var sc_invisible=1; 
+var sc_security="0295c6b2"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/10186794/0/0295c6b2/1/"
+alt="web analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+
+
+</html>
