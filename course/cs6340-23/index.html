@@ -1,0 +1,757 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>  
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	
+	<title>CS 6340 Software Analysis and Test, Fall 2023</title> 
+</head>
+	
+<body><font face="arial" size="3">
+
+<table border=0> 
+<tr valign=top> 
+<!-- <td>  -->
+<!-- <img src="book.jpg" border="1" height="103.4" width="92.4">  -->
+<!-- </td>  -->
+<td align = left> 
+     <h2> CS 6340 </font>  <br> 
+     Software Analysis and Test<br> 
+     <i>Fall 2023</i></font></h2>  
+</td> 
+</table> 
+
+	<hr noShade size=4>
+
+
+<DT> <b> Announcements: </b>  
+     <ul> 
+<!--        <li> [9/2] The project proposal is due on 9/25 10pm -->
+<!--      ET. Please use the title "[8803 project] YourGroupMemberNames:Project Title". -->
+<!--      <li> [9/2] Please send your group member names to the instructor by 9/18 10:00 pm EST. -->
+<!--      <li> [8/18] The Bluejeans <a href="https://bluejeans.com/723989150?src=join_info">link</a> for lectures. Please -->
+<!--      contact the instructor if you don't have Bluejeans access. -->
+<!--
+<li> [8/24] The first paper review on range analysis  is due on 8/31 10pm
+     ET.
+<li> [8/24] Submit your preference of 5 papers to present in Canvas by 8/28 10pm
+  ET. If you do not have access to Canvas, please email the instructor
+  directly.
+      <li> [8/9] We plan to hold live Bluejeans sessions for lectures (<a href="https://gatech.bluejeans.com/810334931/0201">link</a>). Please -->
+<!--      contact the instructor if you don't have Bluejeans access. -->
+<li> [8/23] We will upload course materials to Canvas. Please use Canvas to post
+  any questions.
+      <li> [8/14] Welcome to CS 6340!
+     </ul>
+
+<p>
+
+
+
+
+	<hr noShade size=4>
+<DL>
+<p> 
+  <DT> <b>Instructor</b>:
+    <DD><a href="http://helloqirun.github.io/">Qirun Zhang</a>, <br> 
+      Office: 2324 Klaus<br> 
+      Office Hours: Tue/Thu 4:45 - 5:30 PM<br> 
+      Email: qrzhang@gatech.edu
+      <p>
+	<DT> <b>Teaching Assistant</b>:
+	  <DD>Matthew Davis, <br> 
+	    Office: By appointment<br> 
+	    Office Hours: Tuesday 11 AM - 12 PM<br> 
+	    Email: mdavis438@gatech.edu<br>
+	    <p>
+          <DD>Yu Pan, <br>
+            Office: By appointment<br>
+            Office Hours: Wednesday 9:30 AM - 10:30 AM<br>
+            Email: yupan@gatech.edu<br>
+            <p>
+
+<DT> <b>Lectures</b>: 
+    <DD> Time: Tue/Thu 3:30 PM - 4:45 PM<br> 
+      Location: Howey Physics L5<sup><a href="#fn1">*</a></sup><br>
+Zoom link: Click to <a href="https://gatech.zoom.us/j/95106415298?from=addon">join</a>.
+
+
+<p>
+
+<!-- <DT> <b> Office Hours: </b>   -->
+<!--      <ul> -->
+<!--      <li> Mon.: 2:00pm-4:00pm (55 Kemper, Thong) -->
+<!--      <li> Wed.: 2:00pm-4:00pm (<strike>1031 Academic Surge Building</strike> -->
+<!--      3027 Kemper Hall, Qirun) -->
+<!--      </ul> -->
+
+<p>
+
+<DT><b>Course Summary</b>:
+  <DD>CS 6340 is a graduate-level course on software analysis and testing. We
+    will cover topics such as static program analysis, random testing, dataflow
+    analysis, type systems, test case generation, symbolic execution, and
+    more. We will also study selected papers from PL conferences such as <a href="https://dblp.org/db/conf/popl/index.html">POPL</a>
+    and <a href="https://dblp.org/db/conf/pldi/index.html">PLDI</a>. 
+
+
+	  
+<p>
+  <DT> <b> References</b>:
+    <ul><li>Static Analysis
+   <ul>
+   <li> <i><b>Principles of Program Analysis</b></i> 
+     by F. Nielson, H. Nielson, and C. Hankin, 
+    Springer, 1999.
+   <li> <i><b>Formal Semantics of Programming Languages</b></i> 
+     by G. Winskel, 
+    MIT Press, 1993.
+   <li>[MS18] <i><b>Static Program Analysis</b></i> 
+     by A. M&oslash;ller and M. Schwartzbach, 
+     <a href="https://cs.au.dk/~amoeller/spa/">Online book</a>, 2018.
+   <li> Updated lecture notes will be posted in Canvas.
+   </ul><p>
+      <li> Writing and Presentation
+	   <ul> 
+   <li>  
+     <a href="https://www.cs.columbia.edu/~hgs/etc/writing.html">Tips and Resources for Writing Computer Science Papers</a>.
+   <li><a href="https://www.cs.columbia.edu/~hgs/etc/talk-hints.html">Hints for Giving Technical Talks</a>.
+   </ul>
+<p>
+      <li> Source Code Analysis with Static Value-Flow
+	   <ul> 
+   <li>  
+     <a href="https://svf-tools.github.io/SVF/">SVF framework</a>.
+   </ul>
+
+   
+   </ul>
+
+<p>
+
+<!-- <p> -->
+<DT><b>Assignments</b>:
+    <ul><li><b><i>Paper Review</i></b>
+   <ul>
+   <li> Paper review LaTeX <a href="review.tex">template</a>. 
+   <li> Deadline: by 10:00 pm EST the night before the class.
+   </ul><p>
+      <li><b><i>Project Proposal</i></b>
+	   <ul>
+   <li> Four-Paragraph  <a href="https://www.cs.columbia.edu/~hgs/etc/intro-style.html">guideline</a> for your proposal.
+   <li> Deadline: 9/30 by 10:00 pm EST.
+     </ul>
+<p>
+      <li><b><i>Project Report</i></b>
+	   <ul>
+   <li> Conference-paper-style report.
+   <li> Deadline: 11/25 by 10:00 pm EST.
+     </ul>
+
+   
+   </ul>
+
+<p>
+<DT><b>Grading</b>: 
+<DD> Grading breakdown:
+<ul> 
+<li> Paper Review: 20%
+<li> Presentation: 20%
+<li> Project: 60%
+</ul> 
+<!-- <DD> Grading may reflect the clarity of your presentation as well as the  -->
+<!--      correctness of your answers.  -->
+<p> 
+<DD> Late assignment submission policy:
+<ul> 
+<li> Within 24 hours after the assignment is due: 50% point deduction;
+<li> More than 24 hours late: 100% point deduction.
+</ul> 
+<!-- <DD> Grading may reflect the clarity of your presentation as well as the  -->
+<!--      correctness of your answers.  -->
+<p> 
+
+
+
+
+<DT> <b> Schedule</b>:
+<DD> <body>
+<p>
+<table border="">
+<tbody>
+<tr>
+<th>Date</th>
+<th>Topic</th>
+<th>Paper</th>
+<th>Presenter and Optional Reading</th>
+</tr>
+
+<tr>
+<td> 8/22  </td>
+<td> Introduction</td>
+<td>
+     <ul>
+     <li> <a href="#">Course Logistics</a>
+     </ul>
+</td>
+<td rowspan="2">
+  <ul>
+    <li>Qirun
+    <li>Reading:
+  <ul>
+     <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash
+     Course on Notation in Programming Language Theory</a>
+       (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>).
+     <li> [MS18] Chapter 1.
+     </ul>
+     </ul>
+</td>
+
+</tr>
+
+<tr>
+<td> 8/24  </td>
+<td> Fundamentals</td>
+<td>
+     <ul>
+     <li> <a href="#">Static Analysis and Soundness</a>
+     </ul>
+     </td>
+</tr>
+<tr>
+<td> 8/29  </td>
+<td>Fundamentals</td>
+<td>
+     <ul>
+     <li>Type analysis
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Qirun
+      <li> Readings:
+  <ul> 
+     <li> [MS18] Chapter 3.
+     </ul> 
+     </ul>
+</td>
+</tr>
+
+
+<tr>
+<td> 8/31  </td>
+<td> Range analysis </td>
+<td>
+     <ul>
+     <li>[PLDI'20] Towards a verified range analysis for JavaScript JITs
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> 
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/5  </td>
+<td> Fundamentals</td>
+<td>
+     <ul>
+     <li>Flow-sensitive analyses
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Qirun
+      <li> Readings:
+  <ul> 
+     <li> [MS18] Chapters 4 and 5.
+     </ul> 
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/7  </td>
+<td> Graph reachability </td>
+<td>
+     <ul>
+     <li> [POPL'95] Precise Interprocedural Dataflow Analysis via Graph Reachability
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> 
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/12  </td>
+<td> Value-flow analysis</td>
+<td>
+     <ul>
+     <li> SVF: interprocedural static value-flow analysis in LLVM
+     </ul>
+</td>
+
+<td >
+  <ul>
+    <li> TA
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/14  </td>
+<td> Symbolic Execution </td>
+<td>
+     <ul>
+     <li>Notes
+     </ul>
+    
+     </td>
+<td >
+  <ul>
+    <li> Qirun
+     </ul>
+</td>
+</tr>
+
+
+<tr>
+<td> 9/19</td>
+<td> Value-flow analysis application </td>
+<td>
+     <ul>
+     <li> [TSE'14] Detecting Memory Leaks Statically with Full-Sparse Value-Flow Analysis
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li>
+     </ul>
+</td>
+</tr>
+
+
+
+<tr>
+<!-- 9/24 -->
+<td> 9/21  </td> 
+<td> Translation Validation </td>
+<td>
+     <ul>
+     <li> [PLDI'21] Alive2: Bounded Translation Validation for LLVM
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> 
+     </ul>
+</td>
+</tr>
+
+<!-- 9/19 -->
+<tr>
+<td> 9/26  </td>
+<td> Floating-point safety </td>
+<td>
+  <ul> <li> [PLDI'21] High Performance Correctly Rounded Math Libraries for 32-bit Floating Point Representations
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li>
+     </ul>
+</td>
+</tr>
+
+
+
+<tr>
+<!-- 9/26 -->
+<td> 9/28  </td>
+<td> Taint analysis </td>
+<td>
+     <ul>
+     <li> Notes
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Qirun
+
+     </ul>
+</td>
+</tr>
+
+
+
+<tr>
+<td> 10/3  </td>
+<td> Project Proposal </td>
+<td>
+     <ul>
+     <li><a href="#">Schedule</a>
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> All
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 10/5  </td>
+<td> Compiler testing </td>
+<td>
+     <ul>
+     <li> [PLDI'17] Skeletal Program Enumeration for Rigorous Compiler Testing
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> 
+     </ul>
+</td>
+</tr>
+
+
+<!-- <tr> -->
+<!-- <td> 10/10  </td> -->
+<!-- <td> Separation Logic </td> -->
+<!-- <td> -->
+<!--      <ul> -->
+<!--      <li>[POPL'09] <a href="#">Compositional shape analysis by means of bi-abduction</a> -->
+<!--      </ul> -->
+<!--      </td> -->
+<!-- </tr> -->
+<tr>
+  <td> 10/10  </td>
+  <td colspan="3"> No class 
+</td>
+</tr>
+
+<tr>
+<td> 10/12  </td>
+<td> Fundamentals  </td>
+<td>
+     <ul> <li> Path sensitivity and relational analysis
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Qirun
+      <li> Readings:
+  <ul> 
+     <li> [MS18] Chapter 7.
+     </ul> 
+  </ul>
+</td>
+
+</tr>
+
+<!-- 10/22 -->
+<tr>
+<td> 10/17  </td>
+<td> Path-sensitive analysis </td>
+<td>
+     <ul>
+     <li> [PLDI'21] Path-Sensitive Sparse Analysis without Path Conditions
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li>
+     </ul>
+</td>
+</tr>
+
+
+
+<!-- 10/17 -->
+<tr>
+<td> 10/19  </td>
+<td> GPU computing </td>
+<td>
+     <ul>
+     <li> [POPL'23] Taking Back Control in an Intermediate Representation for GPU Computing
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li>
+     </ul>
+</td>
+</tr>
+
+
+<!-- 10/24 -->
+<tr>
+<td> 10/24  </td>
+<td> Fundamentals </td>
+<td>
+     <ul>
+     <li> Interprocedural and context sensitive analysis
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Qirun
+      <li> Readings:
+  <ul> 
+     <li> [MS18] Chapter 8.
+     </ul> 
+
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 10/29 -->
+<tr>
+<td> 10/26  </td>
+<td> Bug finding </td>
+<td>
+     <ul>
+     <li> [PLDI'22] Finding Typing Compiler Bugs
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li>
+     </ul>
+</td>
+</tr>
+
+<!-- 10/31 -->
+<tr>
+<td> 10/31  </td>
+<td> Fundamentals </td>
+<td>
+     <ul>
+     <li> Pointer analysis
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li>  Qirun
+    <li> Readings:
+  <ul> 
+     <li> [MS18] Chapter 10.
+     </ul> 
+    
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 11/5 -->
+<tr>
+<td> 11/2  </td>
+<td> Fuzzing </td>
+<td>
+     <ul>
+       <li> [PLDI'23] Fuzzing Loop Optimizations in Compilers for C++ and Data-Parallel Languages
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> 
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<!-- 11/7 -->
+<tr>
+<td> 11/7  </td>
+<td> Random Testing </td>
+<td>
+     <ul>
+     <li> Notes
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Qirun
+     </ul>
+</td>
+</tr>
+
+<!-- 11/12 -->
+<tr>
+<td> 11/9  </td>
+<td> WebAssembly </td>
+<td>
+     <ul>
+     <li> [PLDI'22] Finding the Dwarf: Recovering Pecise Types from WebAssembly Binaries
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> 
+     </ul>
+</td>
+</tr>
+
+<!-- 11/14 -->
+<tr>
+<td> 11/14  </td>
+<td> Delta debugging </td>
+<td>
+     <ul>
+     <li> Notes
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> Qirun
+     </ul>
+</td>
+</tr>
+<!-- 11/19 -->
+<tr>
+<td> 11/16  </td>
+<td> Test-case reduction </td>
+<td>
+     <ul>
+     <li> [PLDI'21] Test-Case Reduction and Deduplication Almost for Free with Transformation-Based Compiler Testing
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> 
+     </ul>
+</td>
+</tr>
+
+<!-- 11/21 -->
+<tr>
+<td> 11/21  </td>
+<td> Bounded model checking </td>
+<td>
+     <ul>
+     <li> [CAV'14] Bounded Model Checking of Multi-threaded C Programs via Lazy Sequentialization
+     </ul>
+     </td>
+<td >
+  <ul>
+    <li> 
+     </ul>
+</td>
+</tr>
+
+<!-- 11/26 -->
+<tr>
+  <td> 11/23  </td>
+    <td colspan="3"> No class 
+</td>
+</tr>
+<tr>
+<td> 11/28  </td>
+<td>  
+  Final Presentation
+      </td>
+<td>     <ul>
+         <li><a href="#">Schedule</a>
+     </ul>
+ </td>
+<td >
+  <ul>
+    <li> All
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+<tr>
+<td> 11/30  </td>
+<td>  
+  Final Presentation
+      </td>
+<td>     <ul>
+         <li><a href="#">Schedule</a>
+     </ul>
+ </td>
+<td >
+  <ul>
+    <li> All
+  <!-- <ul> -->
+  <!--    <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash -->
+  <!--    Course on Notation in Programming Language Theory</a> -->
+  <!--      (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>). -->
+  <!--    <li> [MS18] Chapter 1. -->
+  <!--      <li> [MS18] Chapter 10. -->
+  <!--    </ul> -->
+     </ul>
+</td>
+</tr>
+
+
+
+</tbody></table>
+
+<br>
+<p>
+<DT> <b> Misc</b>: 
+<DD>
+If you have any concern, please send an email to the
+instructor. This <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTh1B4KKjKhp-_J9tvNIQ4hrdKb36ZZJQ0t06k0-nx6JV6Jw/viewform?usp=sf_link">link</a> could
+help to send anonymous messages.
+<br>
+<br>  
+	<hr noShade size=4>
+<p id="fn1"><sup>*</sup> In-person attendance is not enforced. We will record each lecture. The recorded video will be shared on Zoom.</p>
+
+
+</font>
+
+
+</body>
+
+
+</html>
