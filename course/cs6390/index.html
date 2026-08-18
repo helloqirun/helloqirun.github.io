@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>  
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	
+	<title>CS 6390 Programming Languages / CS 8803 Program semantics and LLMs, Fall 2026</title> 
+</head>
+	
+<body><font face="arial" size="3">
+    <!-- <object> -->
+
+<table border=0> 
+<tr valign=top> 
+<!-- <td>  -->
+<!-- <img src="book.jpg" border="1" height="103.4" width="92.4">  -->
+<!-- </td>  -->
+<td align = left> 
+     <h2> <font> CS 6390 Programming Languages <br> 
+  CS 8803 Program semantics and LLMs<br> 
+     <i>Fall 2026</i></font></h2>  
+</td> 
+</table> 
+
+	<hr noShade size=4>
+
+
+<DT> <b> Announcements: </b>  
+     <ul> 
+   <li> [8/18] This page lists the basic course information. We will be using Piazza for CS6390/CS8803. If you need access to Piazza, please email the instructor.</li> 
+       <li> [8/18] Welcome to CS6390/CS8803!</li>
+     </ul>
+
+<p>
+
+
+
+
+	<hr noShade size=4>
+<DL>
+<p> 
+<DT> <b>Instructor</b>:
+   <DD><a href="http://helloqirun.github.io/">Qirun Zhang</a>, <br> 
+       Office: 2324 Klaus<br> 
+       Office Hours: Wednesdays 11:00 AM - 12:00 PM or by appointment<br> 
+     Email: qrzhang@gatech.edu
+<p> 
+<DT> <b>Teaching Assistants</b>:
+ <DD>Ben Mikek, <br> 
+       Office: Open lounge area in front of KACB 2319<br> 
+       Office Hours: See Piazza<br> 
+	 Email: bmikek@gatech.edu
+
+<p> 
+
+  <DD>Bhumika Mittal, <br> 
+       Office: Open lounge area in front of KACB 2319<br> 
+       Office Hours: See Piazza<br> 
+     Email: bmittal30@gatech.edu <br>
+   <p>
+
+<DT> <b>Lectures</b>: 
+    <DD> Time: Mon/Wed 9:30 AM - 10:45 PM <br> 
+      Location: Mason 5134<br>
+
+
+
+<p>
+
+<!-- <DT> <b> Office Hours: </b>   -->
+<!--      <ul> -->
+<!--      <li> Mon.: 2:00pm-4:00pm (55 Kemper, Thong) -->
+<!--      <li> Wed.: 2:00pm-4:00pm (<strike>1031 Academic Surge Building</strike> -->
+<!--      3027 Kemper Hall, Qirun) -->
+<!--      </ul> -->
+
+<p>
+
+<DT><b>Course Summary</b>:
+  <DD>This course will cover the principles and foundations of compiler design. The course project will be structured
+around the design of a compiler for a small, but expressive, imperative language to be translated for execution
+on a simulator of the MIPS processor. After successfully completing the course, students will be able to
+design and develop all major components of a compiler.
+	  
+<p>
+  <DT> <b> References</b>:
+    <ul><li>Program Semantics
+	<ul>
+   <li>[W93] <i><b>Formal Semantics of Programming Languages</b></i> 
+     by G. Winskel, 
+    MIT Press, 1993.
+   <li>[MS18] <i><b>Static Program Analysis</b></i> 
+     by A. M&oslash;ller and M. Schwartzbach, 
+     <a href="https://cs.au.dk/~amoeller/spa/">Online book</a>, 2018.
+   <li> Updated lecture notes will be posted on 
+        Piazza. 
+   </ul><p>
+      <li> Writing and Presentation
+	   <ul> 
+   <li>  
+     <a href="https://www.cs.columbia.edu/~hgs/etc/writing.html">Tips and Resources for Writing Computer Science Papers</a>.
+   <li><a href="https://www.cs.columbia.edu/~hgs/etc/talk-hints.html">Hints for Giving Technical Talks</a>.
+   </ul>
+
+
+   
+   </ul>
+
+<p>
+
+<!-- <p> -->
+<DT><b>Assignments</b>:
+    <ul><li><b><i>Homework 1</i></b>
+   <ul>
+   <li> Deadline: 9/10/2025 by 23:59 pm EST.
+   </ul><p>
+      <li><b><i>Homework 2</i></b>
+	   <ul>
+   <li> Deadline: 10/15/2025 by 23:59 pm EST.
+     </ul>
+<p>
+      <li><b><i>Homework 3</i></b>
+	   <ul>
+   <li> Deadline: 11/24/2025 by 23:59 pm EST.
+	   </ul>
+	   <p>
+      <li><b><i>Worksheets</i></b>
+	   <ul>
+   <li> Deadline: Each lecture day by 23:59 pm EST.
+     </ul>
+   </ul>
+
+<p>
+<DT><b>Grading</b>: 
+<DD> Grading breakdown:
+<ul> 
+<li> Written Homework: 15%
+<li> Programming Projects: 30%
+<li> Midterm Exam: 25%
+<li> Final Exam: 25%
+<li> Class Participation: 5% 
+<li> Project BONUS: 5%
+</ul> 
+<!-- <DD> Grading may reflect the clarity of your presentation as well as the  -->
+<!--      correctness of your answers.  -->
+<p> 
+<!-- <DD> Late assignment submission policy: -->
+<!--   <ul> -->
+<!--     <li> With in 1 hour after the assignment is due: see the course syllabus on Piazza; -->
+<!-- <li> Within 24 hours after the assignment is due: 50% point deduction; -->
+<!-- <li> More than 24 hours late: 100% point deduction. -->
+<!-- </ul>  -->
+<!-- <DD> Grading may reflect the clarity of your presentation as well as the  -->
+<!--      correctness of your answers.  -->
+<p> 
+
+<DT> <b> Schedule (tentative)</b>:
+<DD> <body>
+<p>
+<table border="">
+<tbody>
+<tr>
+<th>Date</th>
+<th>Topic</th>
+<th>Reference</th>
+<th>Remark</th>
+</tr>
+
+
+<tr>
+<td> 8/24  </td>
+<td>Course Logistics</td>
+<td rowspan="2">
+
+  <ul>
+     <li> <a href="http://siek.blogspot.com/2012/07/crash-course-on-notation-in-programming.html">Crash
+     Course on Notation in Programming Language Theory</a>
+       (<a href="https://www.youtube.com/watch?v=vU3caZPtT2I">video1</a>, <a href="https://www.youtube.com/watch?v=MhuK_aepu1Y">video2</a>).
+     <li> [MS18] Chapter 1
+            [W93] Chapter 1
+     </ul>
+
+</td>
+
+<td>
+<ul>
+          </ul>
+</td>
+</tr>
+<tr>
+<td> 8/26  </td>
+<td>Mathematical Background</td>
+
+<td >
+  
+
+</td>
+</tr>
+
+
+
+<tr>
+<td> 8/31  </td>
+<td>IMP and Operational Semantics</td>
+<td rowspan="2">
+     <ul>
+     <li>[W93] Chapter 2
+      <li>[W93] Chapter 3 (optional)
+     </ul>
+     </td>
+<td ><ul><li> Homework 1 assigned
+</ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/2  </td>
+<td>IMP and Operational Semantics</td>
+
+<td >
+</td>
+</tr>
+
+<tr>
+<td> 9/7  </td>
+<td> No class (school holiday)</td>
+<td colspan="2">
+</td>
+
+</tr>
+
+
+<tr>
+<td> 9/9  </td>
+<td>IMP and Denotational Semantics</td>
+<td rowspan=2>
+     <ul>
+     <li>[W93] Chapter 5
+     </ul>
+     </td>
+<td >
+</td>
+</tr>
+
+<tr>
+<td> 9/14  </td>
+<td> IMP and Denotational Semantics
+</td>
+
+<td>
+     </td>
+
+</tr>
+
+<tr>
+<td> 9/16  </td>
+<td>Project milestone 1</td>
+<td> <ul>LLM-assisted implementations for an IMP interpreter
+     </ul></td>
+<td >
+  <ul>      </ul>
+</td>
+</tr>
+
+<tr>
+<td> 9/21  </td>
+<td>Fixed-Width IMP</td>
+<td rowspan=2>
+     <ul>
+     <li>Class notes
+     </ul>
+    
+     </td>
+<td ><ul><li> Homework 1 due.
+<li> Homework 2 assigned.
+
+</ul>
+</td>
+</tr>
+
+
+<tr>
+<!-- 9/24 -->
+<td> 9/23  </td> 
+<td>Fixed-Width IMP</td>
+
+<td >
+    <ul>
+   
+    </ul>
+
+</td>
+</tr>
+
+<tr>
+<!-- 9/26 -->
+<td> 9/28  </td>
+<td>Applications for Fixed-Width IMP</td>
+<td>
+     <ul>
+     <li>Presentation
+     </ul>
+     </td>
+<td >
+</td>
+</tr>
+
+<!-- 9/19 -->
+<tr>
+<td> 9/30  </td>
+<td>Reasoning about IMP Types</td>
+<td>
+  <ul> <li>[MS18] Chapter 3
+     </ul>
+     </td>
+<td >
+</td>
+</tr>
+
+
+<tr>
+<td> 10/5  </td>
+<td>No class</td>
+<td colspan="2">
+</td>
+</tr>
+
+<tr>
+<td> 10/7  </td>
+<td>Reasoning about IMP Flows</td>
+<td>
+     <ul><li>[MS18] Chapters 4 and 5
+     </ul>
+     </td>
+<td >
+</td>
+</tr>
+
+<tr>
+<td> 10/12  </td>
+<td> Midterm Exam</td>
+<td colspan="2">
+</td>
+
+</tr>
+
+
+<tr>
+<td> 10/14  </td>
+<td>Reasoning about IMP Paths</td>
+<td>
+     <ul>
+     <li>[MS18] Chapter 7
+     </ul>
+     </td>
+<td ><ul><li> Homework 2 due.
+<li> Homework 3 assigned.
+
+</ul>
+</td>
+</tr>
+
+<!-- 10/17 -->
+<tr>
+<td> 10/19  </td>
+<td>Project milesone 2</td>
+<td>
+     
+     <ul>LLM-assisted implementations for extending the IMP interpreter (e.g., supporting fixed-width and type checking) 
+     </ul>
+     
+     </td>
+<td >
+</td>
+</tr>
+
+<tr>
+
+
+<tr>
+<td> 10/21  </td>
+<td>Reasoning about IMP Functions</td>
+<td>
+     <ul> <li> [MS18] Chapter 7
+     </ul>
+     </td>
+<td >
+  <ul>
+     </ul>
+</td>
+
+</tr>
+
+<!-- 10/22 -->
+<tr>
+<td> 10/26  </td>
+<td>Reasoning about IMP Pointers</td>
+<td><ul><li> [MS18] Chapter 10
+     </ul>
+     </td>
+<td>
+</td>
+</tr>
+
+<!-- 10/24 -->
+<tr>
+<td> 10/28  </td>
+<td>Modern Topics: Symbolic Execution</td>
+<td></td>
+<td>
+ 
+
+</td>
+</tr>
+
+<!-- 10/29 -->
+<tr>
+<td> 11/2  </td>
+<td>Modern Topics: Taint Analysis</td>
+<td></td>
+<td>
+  
+
+</td>
+</tr>
+
+<!-- 10/31 -->
+
+<!-- 11/5 -->
+<tr>
+<td> 11/4  </td>
+<td>Modern Topics: Translation Validation</td>
+<td>
+        
+     </td>
+<td >
+
+</td>
+</tr>
+
+<!-- 11/7 -->
+<tr>
+<td> 11/9  </td>
+<td>Project milestone 3</td>
+<td>
+     <ul>
+     LLM-assisted performance optimization for the exteded IMP     </ul>
+     </td>
+<td >
+ 
+</td>
+</tr>
+
+<!-- 11/12 -->
+<tr>
+<td> 11/11  </td>
+<td>Final Exam</td>
+<td colspan=2>
+  
+</td>
+</tr>
+
+<!-- 11/14 -->
+<tr>
+<td> 11/16  </td>
+<td>TBD</td>
+<td>
+ 
+     </td>
+<td ><ul><li> Homework 3 due.
+</ul>
+</td>
+</tr>
+<!-- 11/19 -->
+<tr>
+<td> 11/18  </td>
+<td>TBD</td>
+<td>
+  
+     </td>
+<td >
+</td>
+</tr>
+
+<!-- 11/21 -->
+<tr>
+<td> 11/23  </td>
+<td>TBD</td>
+<td>
+     </td>
+<td>
+</td>
+</tr>
+
+<!-- 11/26 -->
+<tr>
+<td> 11/25  </td>
+<td>No class</td>
+<td colspan="2">
+     </td>
+</tr>
+<tr>
+<td> 11/30  </td>
+<td>  
+Final Project Presentation
+      </td>
+<td>
+</td>
+<td>
+     <ul>
+   
+     </ul>
+</td>
+
+</tr>
+<tr>
+<td> 12/2  </td>
+<td>Final Project Presentation</td>
+<td>
+     </td>
+     <td>
+     </td>
+</tr>
+
+
+
+
+</tbody></table>
+
+<br>
+<p>
+<DT> <b> Misc</b>: 
+<DD>
+If you have any concern, please send an email to the
+instructor. This <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTh1B4KKjKhp-_J9tvNIQ4hrdKb36ZZJQ0t06k0-nx6JV6Jw/viewform?usp=sf_link">link</a> could
+help to send anonymous messages.
+<br>
+<br>  
+
+
+<!-- </object> -->
+</font>
+
+
+</body>
+
+
+</html>
